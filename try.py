@@ -1,24 +1,25 @@
 import pyperclip
 import re
 
-
-pattern_for_timestamp = re.compile(r"@ (\d+.\d+)")
-
+subtitle_count_pattern = re.compile(r"Dialogue")
 subtititle_file = "/home/tvvoty/LinuxAdd/Vlcfilms/9/Barakamon09.ass"
-# log_text = pyperclip.paste()
 
-with open("/home/tvvoty/LinuxAdd/GitHub/Copy_SMPlayer_Subs/SMPlayerLogs.log", mode='r', encoding='utf-8') as file:
-    log_text = file.read()
+with open(subtititle_file, mode='r', encoding='utf-8') as file:
+    subtititle_file_content = file.read()
+c = 0
+dialogues_count = subtitle_count_pattern.finditer(subtititle_file_content)
+for match in dialogues_count:
+    c += 1
+    print(match)
+print(c)
+dialogues_count_list = []
 
-time_stamps = pattern_for_timestamp.finditer(log_text)
-
-# print(time_stamps[1])
-time_stamps_list = []
-for match in time_stamps:
+for match in dialogues_count_list:
     print(match.group(1))
-    time_stamps_list.append(match.group(1))
+    dialogues_count_list.append(match.group(0))
 
-    # print(match.group(1)[-1])
-print(f"The last time stamp is: {time_stamps_list[-1]}")
-
-# pyperclip.copy(subtitles)
+dialogue_count = 0
+for x in dialogues_count_list:
+    print(x)
+    dialogue_count += 1
+print(dialogue_count)
