@@ -1,4 +1,3 @@
-
 import pyperclip
 import re
 
@@ -18,7 +17,8 @@ subtitle_pattern = re.compile(
 
 
 # File section
-subtititle_file = "/home/tvvoty/LinuxAdd/Vlcfilms/9/Barakamon09.ass"
+# Put the path to your .ass subtitle file in to the "subtitle_file" variabe below".
+subtititle_file = "/home/tvvoty/LinuxAdd/Vlcfilms/9/Barakamon09j.ass"
 with open(subtititle_file, mode='r', encoding='utf-8') as file:
     subtititle_file_content = file.read()
 
