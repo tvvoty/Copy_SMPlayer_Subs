@@ -43,7 +43,7 @@ copied into your clipboard after this.
 .
 
 It's highly recommended to create a keyboard shortcut for the last step.
-On Unix with KDE you should be able to do it by:
+On Linux with KDE you should be able to do it by:
 
 First, modifying the path in the included .sh file to the location of CopySub.py file on your system (so it's gonna look like:
 
