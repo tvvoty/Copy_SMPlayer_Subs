@@ -23,8 +23,7 @@ Open SMPlayer and load the video.
 .
 
 3). Click View > SMPlayer Log, a log window will be open.
-I'd recommend putting it on a different virtual desktop if you have
-those available on your system.
+I'd recommend putting it on a different virtual desktop, to whitch you can switch with a keyboard shortcut, if you have those available on your system.
 
 .
 
