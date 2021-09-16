@@ -1,4 +1,6 @@
 #!/bin/bash
+xdotool key BackSpace;
+sleep 0.2;
 xdotool key "alt+d";
 sleep 0.1;
 xdotool key space;
