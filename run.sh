@@ -1,6 +1,7 @@
 #!/bin/bash
-xdotool key BackSpace;
-sleep 0.2;
+sleep 0.1;
+xdotool key h;
+sleep 0.1;
 xdotool key "alt+d";
 sleep 0.1;
 xdotool key space;

@@ -46,7 +46,8 @@ def binary_search(sub_list, timestamp):
 
 
 def going_up(sub_line_end, timestamp_ms, row):
-    while sub_line_end > timestamp_ms:
+    limit_counter = 0
+    while sub_line_end > timestamp_ms or limit_counter < 6:
         row -= 1
         sub_line_start = sub_time_to_ms(
             sub_list[row][0], sub_list[row][1], sub_list[row][2], sub_list[row][3])
@@ -54,15 +55,30 @@ def going_up(sub_line_end, timestamp_ms, row):
             sub_list[row][4], sub_list[row][5], sub_list[row][6], sub_list[row][7])
         if sub_line_start < timestamp_ms < sub_line_end:
             subtitle.append(sub_line)
-    for i in range(5):
-        row -= 1
-        sub_line_start = sub_time_to_ms(
-            sub_list[row][0], sub_list[row][1], sub_list[row][2], sub_list[row][3])
-        sub_line_end = sub_time_to_ms(
-            sub_list[row][4], sub_list[row][5], sub_list[row][6], sub_list[row][7])
-        if sub_line_end > timestamp_ms:
-            going_up(sub_line_start, timestamp_ms, row)
+            limit_counter -= 2
+        else:
+            limit_counter += 1
         return None
+
+
+# def going_up_dep(sub_line_end, timestamp_ms, row):
+#     while sub_line_end > timestamp_ms:
+#         row -= 1
+#         sub_line_start = sub_time_to_ms(
+#             sub_list[row][0], sub_list[row][1], sub_list[row][2], sub_list[row][3])
+#         sub_line_end = sub_time_to_ms(
+#             sub_list[row][4], sub_list[row][5], sub_list[row][6], sub_list[row][7])
+#         if sub_line_start < timestamp_ms < sub_line_end:
+#             subtitle.append(sub_line)
+#     for i in range(5):
+#         row -= 1
+#         sub_line_start = sub_time_to_ms(
+#             sub_list[row][0], sub_list[row][1], sub_list[row][2], sub_list[row][3])
+#         sub_line_end = sub_time_to_ms(
+#             sub_list[row][4], sub_list[row][5], sub_list[row][6], sub_list[row][7])
+#         if sub_line_end > timestamp_ms:
+#             going_up(sub_line_start, timestamp_ms, row + 1)
+#         return None
 
 
 # Patterns section
