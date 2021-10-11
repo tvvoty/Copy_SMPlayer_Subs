@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 0.1;
+sleep 0.2;
 xdotool key h;
 sleep 0.1;
 xdotool key "alt+d";
